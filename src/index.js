@@ -8,6 +8,7 @@ import Activities from "./activities";
 import ManageActivities from "./AdminActivity";
 import UnderConstruction from "./UnderConstruction";
 import Logout from "./Logout";
+import './club.css';
 
 class App extends React.Component {
     constructor(props) {
