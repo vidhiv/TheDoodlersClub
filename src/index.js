@@ -44,6 +44,13 @@ class App extends React.Component {
                 content = <ManageActivities />;
                 heading = "Activities Management";
                 break;
+            case "logout":
+                content = <Logout t={this} />;
+                heading = "Logout";
+                break;
+            default:
+                content = <UnderConstruction />;
+                heading = "OOPS!"
 
         }
         // statements/logic to set the content variable based on state
