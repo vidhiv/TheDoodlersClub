@@ -1,28 +1,22 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import events from "./eventData.json";
 import Menu from "./menu";
 import Home from "./home";
 import Login from "./login";
 import Application from "./application";
 import Activities from "./activities";
 import ManageActivities from "./AdminActivity";
-import UnderConstruction from "./UnderConstruction";
-import Logout from "./Logout";
-import "./club.css";
 
 class App extends React.Component {
     constructor(props) {
         super(props);
         // Application state variables: *role* is for RBAC == "role based access control" we have "guest", "user", and "admin"
-        this.state = {
-            role: "guest",
-            show: "home",
-            sessionVar : {}
-        };
+        this.state = { role: "admin", show: "home" }; 
     }
 
     loadComponent (event, componentShow) { // loadcomponent accepts parameter and sets the value of "state.show" using setState()
-        this.setState({ show: componentShow });
+        this.setState({show: componentShow});
     }
 
     render() {
@@ -34,11 +28,11 @@ class App extends React.Component {
                 heading = "The Doodlers Club!";
                 break;
             case "login":
-                content = <Login t={this} />;
+                content = <Login />;
                 heading = "Login";
                 break;
             case "activities":
-                content = <Activities />;
+                content = <Activities events = {events}/>;
                 heading = "Activities to engage in!";
                 break;
             case "apply":
@@ -49,18 +43,12 @@ class App extends React.Component {
                 content = <ManageActivities />;
                 heading = "Activities Management";
                 break;
-            case "logout":
-                content = <Logout t={this} />;
-                heading = "Logout";
-                break;
-            default:
-                content = <UnderConstruction />;
-                heading = "OOPS!"
+
         }
         // statements/logic to set the content variable based on state
         return ( // when calling the menu component, pass the loadComponent function as parameter using bind
             <>
-                <Menu heading={heading} user={this.state.role} showmenu={this.state.show} sessionVar={this.state.sessionVar} loadingcomp={this.loadComponent.bind(this)} />
+                <Menu heading = {heading} user = {this.state.role} showmenu = {this.state.show} loadingcomp = {this.loadComponent.bind(this)} />
                 {content}
             </>
         );
