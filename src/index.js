@@ -13,7 +13,7 @@ class App extends React.Component {
     constructor(props) {
         super(props);
         // Application state variables: *role* is for RBAC == "role based access control" we have "guest", "user", and "admin"
-        this.state = { role: "admin", show: "home" }; 
+        this.state = { role: "guest", show: "home" }; 
     }
 
     loadComponent (event, componentShow) { // loadcomponent accepts parameter and sets the value of "state.show" using setState()
