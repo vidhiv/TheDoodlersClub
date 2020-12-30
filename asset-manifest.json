@@ -1,19 +1,23 @@
 {
   "files": {
-    "main.js": "/TheDoodlersClub/static/js/main.64c05be7.chunk.js",
-    "main.js.map": "/TheDoodlersClub/static/js/main.64c05be7.chunk.js.map",
+    "main.css": "/TheDoodlersClub/static/css/main.1ab75620.chunk.css",
+    "main.js": "/TheDoodlersClub/static/js/main.a84baec3.chunk.js",
+    "main.js.map": "/TheDoodlersClub/static/js/main.a84baec3.chunk.js.map",
     "runtime-main.js": "/TheDoodlersClub/static/js/runtime-main.65be516f.js",
     "runtime-main.js.map": "/TheDoodlersClub/static/js/runtime-main.65be516f.js.map",
     "static/js/2.77de9363.chunk.js": "/TheDoodlersClub/static/js/2.77de9363.chunk.js",
     "static/js/2.77de9363.chunk.js.map": "/TheDoodlersClub/static/js/2.77de9363.chunk.js.map",
     "index.html": "/TheDoodlersClub/index.html",
+    "static/css/main.1ab75620.chunk.css.map": "/TheDoodlersClub/static/css/main.1ab75620.chunk.css.map",
     "static/js/2.77de9363.chunk.js.LICENSE.txt": "/TheDoodlersClub/static/js/2.77de9363.chunk.js.LICENSE.txt",
+    "static/media/club.css": "/TheDoodlersClub/static/media/Pangolin-Regular.7960c77c.ttf",
     "static/media/activitiesPage.62bfcffc.jpg": "/TheDoodlersClub/static/media/activitiesPage.62bfcffc.jpg",
     "static/media/homepage_1.8688c322.jpg": "/TheDoodlersClub/static/media/homepage_1.8688c322.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.65be516f.js",
     "static/js/2.77de9363.chunk.js",
-    "static/js/main.64c05be7.chunk.js"
+    "static/css/main.1ab75620.chunk.css",
+    "static/js/main.a84baec3.chunk.js"
   ]
 }
