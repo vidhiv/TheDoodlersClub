@@ -7,7 +7,7 @@ import Login from "./login";
 import Application from "./application";
 import Activities from "./activities";
 import ManageActivities from "./AdminActivity";
-import "./club.css"
+import "./club.css";
 
 class App extends React.Component {
     constructor(props) {
