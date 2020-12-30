@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/TheDoodlersClub/static/css/main.1ab75620.chunk.css",
-    "main.js": "/TheDoodlersClub/static/js/main.0a682706.chunk.js",
-    "main.js.map": "/TheDoodlersClub/static/js/main.0a682706.chunk.js.map",
+    "main.js": "/TheDoodlersClub/static/js/main.fd4dd0cc.chunk.js",
+    "main.js.map": "/TheDoodlersClub/static/js/main.fd4dd0cc.chunk.js.map",
     "runtime-main.js": "/TheDoodlersClub/static/js/runtime-main.65be516f.js",
     "runtime-main.js.map": "/TheDoodlersClub/static/js/runtime-main.65be516f.js.map",
     "static/js/2.77de9363.chunk.js": "/TheDoodlersClub/static/js/2.77de9363.chunk.js",
@@ -18,6 +18,6 @@
     "static/js/runtime-main.65be516f.js",
     "static/js/2.77de9363.chunk.js",
     "static/css/main.1ab75620.chunk.css",
-    "static/js/main.0a682706.chunk.js"
+    "static/js/main.fd4dd0cc.chunk.js"
   ]
 }
