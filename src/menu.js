@@ -18,7 +18,7 @@ function Menu(props) {
     let manageact = <li className = {checkActive("manageact")} onClick={() => props.loadingcomp(null, "manageact")}><a>Manage Activities</a></li>;
 
     switch(props.user) {
-        case "user" :
+        case "member" :
             menucontent = <ul>{home}{activities}{profile}{logout}</ul>;
             break;
         case "guest" :
@@ -30,10 +30,16 @@ function Menu(props) {
                     
     }
 
+    let welcomeUser = "";
+    if(Object.keys(props.sessionVar).length != 0) {
+        welcomeUser = props.sessionVar['firstName'] + " " + props.sessionVar['lastName'] + " (" + props.sessionVar['id']+ "), role : " + props.sessionVar['role']
+    }
+
     let menu = <nav>{menucontent}</nav>;
     return <header>
         {menu}
         <h1>{props.heading}</h1>
+        <h2>{welcomeUser}</h2>
     </header>;
 }
 
