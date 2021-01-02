@@ -6,7 +6,7 @@ class Activities extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            events: [{}]
+            events: []
         };
     }
 
@@ -47,11 +47,17 @@ class Activities extends React.Component {
 
         let myTable;
 
-        let tableRows = this.state.events.map(function (event, index) {
-            return <tr key={"event" + index}><td>{event.name}</td>
-                <td>{event.description}</td>
-                <td>{event.dates}</td></tr>;
-        });
+        let tableRows;
+
+        if (this.state.events.length == 0) {
+            tableRows = <tr><td colSpan = "3">Loading...</td></tr>;
+        } else {
+            tableRows = this.state.events.map(function (event, index) {
+                return <tr key={"event" + index}><td>{event.name}</td>
+                    <td>{event.description}</td>
+                    <td>{event.dates}</td></tr>;
+            });
+        }
 
         myTable = <table>
             <caption>Activities Info</caption>

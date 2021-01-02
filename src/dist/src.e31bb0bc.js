@@ -28619,7 +28619,7 @@ class Activities extends _react.default.Component {
   constructor(props) {
     super(props);
     this.state = {
-      events: [{}]
+      events: []
     };
   }
 
@@ -28732,11 +28732,20 @@ class Activities extends _react.default.Component {
     }))), " Check here for frequent updates");
 
     let myTable;
-    let tableRows = this.state.events.map(function (event, index) {
-      return /*#__PURE__*/_react.default.createElement("tr", {
-        key: "event" + index
-      }, /*#__PURE__*/_react.default.createElement("td", null, event.name), /*#__PURE__*/_react.default.createElement("td", null, event.description), /*#__PURE__*/_react.default.createElement("td", null, event.dates));
-    });
+    let tableRows;
+
+    if (this.state.events.length == 0) {
+      tableRows = /*#__PURE__*/_react.default.createElement("tr", null, /*#__PURE__*/_react.default.createElement("td", {
+        colSpan: "3"
+      }, "Loading..."));
+    } else {
+      tableRows = this.state.events.map(function (event, index) {
+        return /*#__PURE__*/_react.default.createElement("tr", {
+          key: "event" + index
+        }, /*#__PURE__*/_react.default.createElement("td", null, event.name), /*#__PURE__*/_react.default.createElement("td", null, event.description), /*#__PURE__*/_react.default.createElement("td", null, event.dates));
+      });
+    }
+
     myTable = /*#__PURE__*/_react.default.createElement("table", null, /*#__PURE__*/_react.default.createElement("caption", null, "Activities Info"), /*#__PURE__*/_react.default.createElement("thead", null, /*#__PURE__*/_react.default.createElement("tr", null, /*#__PURE__*/_react.default.createElement("th", null, "Name"), /*#__PURE__*/_react.default.createElement("th", null, "Description"), /*#__PURE__*/_react.default.createElement("th", null, "Timimngs"))), /*#__PURE__*/_react.default.createElement("tbody", {
       id: "activitiesBody"
     }, tableRows));
@@ -28768,7 +28777,7 @@ class ManageActivities extends _react.default.Component {
       name: "",
       description: "",
       dates: "",
-      events: [{}],
+      events: [],
       amsg: "",
       dmsg: ""
     };
@@ -28913,15 +28922,22 @@ class ManageActivities extends _react.default.Component {
     }, this.state.dmsg));
 
     let tableRows;
-    tableRows = this.state.events.map(function (event, index) {
-      return /*#__PURE__*/_react.default.createElement("tr", {
-        key: "event" + index
-      }, /*#__PURE__*/_react.default.createElement("td", null, /*#__PURE__*/_react.default.createElement("button", {
-        type: "button",
-        className: "deleteRow",
-        onClick: that.deleteEvent.bind(that, event.id)
-      }, "Delete")), /*#__PURE__*/_react.default.createElement("td", null, event.name), /*#__PURE__*/_react.default.createElement("td", null, event.description), /*#__PURE__*/_react.default.createElement("td", null, event.dates));
-    });
+
+    if (this.state.events.length == 0) {
+      tableRows = /*#__PURE__*/_react.default.createElement("tr", null, /*#__PURE__*/_react.default.createElement("td", {
+        colSpan: "4"
+      }, "Loading..."));
+    } else {
+      tableRows = this.state.events.map(function (event, index) {
+        return /*#__PURE__*/_react.default.createElement("tr", {
+          key: "event" + index
+        }, /*#__PURE__*/_react.default.createElement("td", null, /*#__PURE__*/_react.default.createElement("button", {
+          type: "button",
+          className: "deleteRow",
+          onClick: that.deleteEvent.bind(that, event.id)
+        }, "Delete")), /*#__PURE__*/_react.default.createElement("td", null, event.name), /*#__PURE__*/_react.default.createElement("td", null, event.description), /*#__PURE__*/_react.default.createElement("td", null, event.dates));
+      });
+    }
 
     let myTable = /*#__PURE__*/_react.default.createElement("table", null, /*#__PURE__*/_react.default.createElement("caption", null, "Activities Info"), /*#__PURE__*/_react.default.createElement("thead", null, /*#__PURE__*/_react.default.createElement("tr", null, /*#__PURE__*/_react.default.createElement("th", null), /*#__PURE__*/_react.default.createElement("th", null, "Name"), /*#__PURE__*/_react.default.createElement("th", null, "Description"), /*#__PURE__*/_react.default.createElement("th", null, "Timimngs"))), /*#__PURE__*/_react.default.createElement("tbody", {
       id: "activitiesBody"
@@ -29000,7 +29016,79 @@ class Logout extends _react.default.Component {
 
 var _default = Logout;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","./constant.json":"constant.json"}],"index.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","./constant.json":"constant.json"}],"../../../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
+var bundleURL = null;
+
+function getBundleURLCached() {
+  if (!bundleURL) {
+    bundleURL = getBundleURL();
+  }
+
+  return bundleURL;
+}
+
+function getBundleURL() {
+  // Attempt to find the URL of the current script and use that as the base URL
+  try {
+    throw new Error();
+  } catch (err) {
+    var matches = ('' + err.stack).match(/(https?|file|ftp|chrome-extension|moz-extension):\/\/[^)\n]+/g);
+
+    if (matches) {
+      return getBaseURL(matches[0]);
+    }
+  }
+
+  return '/';
+}
+
+function getBaseURL(url) {
+  return ('' + url).replace(/^((?:https?|file|ftp|chrome-extension|moz-extension):\/\/.+)\/[^/]+$/, '$1') + '/';
+}
+
+exports.getBundleURL = getBundleURLCached;
+exports.getBaseURL = getBaseURL;
+},{}],"../../../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/css-loader.js":[function(require,module,exports) {
+var bundle = require('./bundle-url');
+
+function updateLink(link) {
+  var newLink = link.cloneNode();
+
+  newLink.onload = function () {
+    link.remove();
+  };
+
+  newLink.href = link.href.split('?')[0] + '?' + Date.now();
+  link.parentNode.insertBefore(newLink, link.nextSibling);
+}
+
+var cssTimeout = null;
+
+function reloadCSS() {
+  if (cssTimeout) {
+    return;
+  }
+
+  cssTimeout = setTimeout(function () {
+    var links = document.querySelectorAll('link[rel="stylesheet"]');
+
+    for (var i = 0; i < links.length; i++) {
+      if (bundle.getBaseURL(links[i].href) === bundle.getBundleURL()) {
+        updateLink(links[i]);
+      }
+    }
+
+    cssTimeout = null;
+  }, 50);
+}
+
+module.exports = reloadCSS;
+},{"./bundle-url":"../../../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"club.css":[function(require,module,exports) {
+var reloadCSS = require('_css_loader');
+
+module.hot.dispose(reloadCSS);
+module.hot.accept(reloadCSS);
+},{"./fonts/Chilanka-Regular.ttf":[["Chilanka-Regular.1e4fb3fe.ttf","fonts/Chilanka-Regular.ttf"],"fonts/Chilanka-Regular.ttf"],"./fonts/CraftyGirls-Regular.ttf":[["CraftyGirls-Regular.8a80f27a.ttf","fonts/CraftyGirls-Regular.ttf"],"fonts/CraftyGirls-Regular.ttf"],"./fonts/Pangolin-Regular.ttf":[["Pangolin-Regular.59bc78a8.ttf","fonts/Pangolin-Regular.ttf"],"fonts/Pangolin-Regular.ttf"],"_css_loader":"../../../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"index.js":[function(require,module,exports) {
 "use strict";
 
 var _react = _interopRequireDefault(require("react"));
@@ -29022,6 +29110,8 @@ var _AdminActivity = _interopRequireDefault(require("./AdminActivity"));
 var _UnderConstruction = _interopRequireDefault(require("./UnderConstruction"));
 
 var _Logout = _interopRequireDefault(require("./Logout"));
+
+require("./club.css");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -29108,7 +29198,7 @@ _reactDom.default.render( /*#__PURE__*/_react.default.createElement(App, null), 
 // let contents = <><Menu heading = "Apply" /> <Application /></>; 
 // // let contents = <><Menu /><Home /></>;
 // ReactDOM.render(contents, document.getElementById("root"));
-},{"react":"../node_modules/react/index.js","react-dom":"../node_modules/react-dom/index.js","./menu":"menu.js","./home":"home.js","./login":"login.js","./application":"application.js","./activities":"activities.js","./AdminActivity":"AdminActivity.js","./UnderConstruction":"UnderConstruction.js","./Logout":"Logout.js"}],"../../../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","react-dom":"../node_modules/react-dom/index.js","./menu":"menu.js","./home":"home.js","./login":"login.js","./application":"application.js","./activities":"activities.js","./AdminActivity":"AdminActivity.js","./UnderConstruction":"UnderConstruction.js","./Logout":"Logout.js","./club.css":"club.css"}],"../../../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -29136,7 +29226,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60547" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53115" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

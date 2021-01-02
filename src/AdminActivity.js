@@ -8,7 +8,7 @@ class ManageActivities extends React.Component {
             name: "",
             description: "",
             dates: "",
-            events: [{}],
+            events: [],
             amsg: "",
             dmsg: ""
         };
@@ -107,15 +107,20 @@ class ManageActivities extends React.Component {
             </div>
             <label id="dmsg" className="checkResponse">{this.state.dmsg}</label>
         </>;
+
         let tableRows;
-        tableRows = this.state.events.map(function (event, index) {
-            return <tr key={"event" + index} >
-                <td><button type="button" className="deleteRow" onClick={that.deleteEvent.bind(that, event.id)}>Delete</button></td>
-                <td>{event.name}</td>
-                <td>{event.description}</td>
-                <td>{event.dates}</td>
-            </tr>;
-        });
+        if (this.state.events.length == 0) {
+            tableRows = <tr><td colSpan="4">Loading...</td></tr>;
+        } else {
+            tableRows = this.state.events.map(function (event, index) {
+                return <tr key={"event" + index} >
+                    <td><button type="button" className="deleteRow" onClick={that.deleteEvent.bind(that, event.id)}>Delete</button></td>
+                    <td>{event.name}</td>
+                    <td>{event.description}</td>
+                    <td>{event.dates}</td>
+                </tr>;
+            });
+        }
 
         let myTable = <table>
             <caption>Activities Info</caption>
