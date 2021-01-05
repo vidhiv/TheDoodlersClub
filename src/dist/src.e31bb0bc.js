@@ -28376,6 +28376,10 @@ exports.default = _default;
 module.exports = "/homepage_1.775362cf.jpg";
 },{}],"images/homepage_2.jpg":[function(require,module,exports) {
 module.exports = "/homepage_2.ea212c62.jpg";
+},{}],"constant.json":[function(require,module,exports) {
+module.exports = {
+  "url": "https://clubserver.glitch.me"
+};
 },{}],"home.js":[function(require,module,exports) {
 "use strict";
 
@@ -28390,43 +28394,48 @@ var _homepage_ = _interopRequireDefault(require("./images/homepage_1.jpg"));
 
 var _homepage_2 = _interopRequireDefault(require("./images/homepage_2.jpg"));
 
+var _constant = _interopRequireDefault(require("./constant.json"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 //importing images for homepage
-// Use images in JSX
-let img1 = /*#__PURE__*/_react.default.createElement("img", {
-  src: _homepage_.default,
-  alt: "home page image"
-});
+class Home extends _react.default.Component {
+  componentDidMount() {
+    fetch(_constant.default["url"] + '/info');
+  }
 
-let img1caption = /*#__PURE__*/_react.default.createElement("figcaption", null, "Canvas painting");
+  render() {
+    // Use images in JSX
+    let img1 = /*#__PURE__*/_react.default.createElement("img", {
+      src: _homepage_.default,
+      alt: "home page image"
+    });
 
-let img2 = /*#__PURE__*/_react.default.createElement("img", {
-  src: _homepage_2.default,
-  alt: "home page image"
-});
+    let img1caption = /*#__PURE__*/_react.default.createElement("figcaption", null, "Canvas painting");
 
-let img2caption = /*#__PURE__*/_react.default.createElement("figcaption", null, "Lets Begin!!!");
+    let img2 = /*#__PURE__*/_react.default.createElement("img", {
+      src: _homepage_2.default,
+      alt: "home page image"
+    });
 
-let homepagecontent = /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("figure", {
-  className: "leftfloating"
-}, img1, img1caption), /*#__PURE__*/_react.default.createElement("h1", null, "What is Doodling?  \uD83C\uDFA8"), /*#__PURE__*/_react.default.createElement("p", null, "Doodling just does not mean to scribble. It says more about our personalities than we may even realise. It simply means to express your emotions like when you are happy or bored or angry or more in the form of art. Something you do in your spare time or Something you do all the time! "), /*#__PURE__*/_react.default.createElement("h2", null, "Reasons to doodle?  \uD83E\uDD14"), /*#__PURE__*/_react.default.createElement("p", null, "Artistic and creative expression offers many benefits. Here\u2019s our top ten:"), /*#__PURE__*/_react.default.createElement("ol", {
-  type: "1"
-}, /*#__PURE__*/_react.default.createElement("li", null, "It\u2019s okay to make a mess! : Leave the set up and cleanup of all those art supplies to us. Our studio is bright, open, and it can handle the drops of paints, splatters of glue, and scraps of fabric all over the floor when creativity is happening. So go ahead and let the kids (or you) make a mess."), /*#__PURE__*/_react.default.createElement("li", null, "It relieves stress : Your life is busy, but it\u2019s important to remember to take some time for yourself. A recent study found that 45 minutes of creative activity significantly lessens stress in the body, regardless of artistic experience or talent. (Study published in Art Therapy: Journal of the American Art Therapy Association, titled \u201CReduction of Cortisol Levels and Participants\u2019 Responses Following Art Making\u201D 2016)."), /*#__PURE__*/_react.default.createElement("li", null, "It exercises a new part of your brain : Is the creative part of your brain underfed? If you work in a highly analytical environment, then an art class is an excellent way to give your brain\u2019s right side a rest and stretch the left side."), /*#__PURE__*/_react.default.createElement("li", null, "It prepares kids for the future : Art enhances fine motor skills, hand-eye coordination, problem solving skills, lateral thinking, complex analysis and critical thinking skills. And art education increases creativity and open-mindedness. Creativity is cited by business leaders as the top leadership competency for the future. "), /*#__PURE__*/_react.default.createElement("li", null, "You\u2019ll look at the world in new ways : Art makes you look at things anew \u2013 even mundane ordinary aspects of the world. Communicating with color, shape, and form awakens your imagination."), /*#__PURE__*/_react.default.createElement("li", null, "Get UNSTUCK : Our inner voices make harsh critics that can stop us before we even begin. Art teaches risk taking, learning from one\u2019s mistakes, and being open to other possibilities. The camaraderie and support of fellow classmates and an encouraging instructor can be the push that you need to just start making!"), /*#__PURE__*/_react.default.createElement("li", null, "Challenge yourself : Learn something new! Whether it\u2019s a new technique, a new medium, or if art in general is something you\u2019ve never done before \u2013 learning new things strengthens us and gives us more confidence."), /*#__PURE__*/_react.default.createElement("li", null, "Decorate your house/apartment : You\u2019ll get so much joy from creating something yourself and having it be a unique addition to your home. And when someone compliments you on the art, you can tell people YOU made it!"), /*#__PURE__*/_react.default.createElement("li", null, "Meet new people : Taking a class together helps you learn new things about old friends and gives you something new to talk about when you go out. And you\u2019ll meet cool new people you otherwise may have never known. Art reaches across racial stereotypes, religious barriers, and socio-economical levels and prejudices. Seeing other culture\u2019s creative expression allows everyone to be more connected and less isolated."), /*#__PURE__*/_react.default.createElement("li", null, "Rekindle your passion : Jealous of what kids made in summer camp and you want to make something, too? Nowadays, you\u2019ve become too busy to keep old hobbies; however, indulging in an old passion could be the perfect remedy for refreshing your spirit.")), /*#__PURE__*/_react.default.createElement("figure", {
-  className: "rightfloating"
-}, img2, img2caption), /*#__PURE__*/_react.default.createElement("h2", null, "Why this club?  \uD83D\uDE2F"), /*#__PURE__*/_react.default.createElement("p", null, "We encourage different art forms like drawing, sketching, painting, many more and welcome one and all. No age barriers"), /*#__PURE__*/_react.default.createElement("h2", null, "Want to have fun doodling? \uD83D\uDD8C"), /*#__PURE__*/_react.default.createElement("p", null, "Yaay!!! Come forward and join us! We are excited to have you :) "), /*#__PURE__*/_react.default.createElement("h2", null, "So what are you waiting for?"), /*#__PURE__*/_react.default.createElement("h2", null, "Lets doodle together!!! \uD83D\uDC9C"));
+    let img2caption = /*#__PURE__*/_react.default.createElement("figcaption", null, "Lets Begin!!!");
 
-function Home() {
-  return /*#__PURE__*/_react.default.createElement("main", null, homepagecontent);
+    let homepagecontent = /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("figure", {
+      className: "leftfloating"
+    }, img1, img1caption), /*#__PURE__*/_react.default.createElement("h1", null, "What is Doodling?  \uD83C\uDFA8"), /*#__PURE__*/_react.default.createElement("p", null, "Doodling just does not mean to scribble. It says more about our personalities than we may even realise. It simply means to express your emotions like when you are happy or bored or angry or more in the form of art. Something you do in your spare time or Something you do all the time! "), /*#__PURE__*/_react.default.createElement("h2", null, "Reasons to doodle?  \uD83E\uDD14"), /*#__PURE__*/_react.default.createElement("p", null, "Artistic and creative expression offers many benefits. Here\u2019s our top ten:"), /*#__PURE__*/_react.default.createElement("ol", {
+      type: "1"
+    }, /*#__PURE__*/_react.default.createElement("li", null, "It\u2019s okay to make a mess! : Leave the set up and cleanup of all those art supplies to us. Our studio is bright, open, and it can handle the drops of paints, splatters of glue, and scraps of fabric all over the floor when creativity is happening. So go ahead and let the kids (or you) make a mess."), /*#__PURE__*/_react.default.createElement("li", null, "It relieves stress : Your life is busy, but it\u2019s important to remember to take some time for yourself. A recent study found that 45 minutes of creative activity significantly lessens stress in the body, regardless of artistic experience or talent. (Study published in Art Therapy: Journal of the American Art Therapy Association, titled \u201CReduction of Cortisol Levels and Participants\u2019 Responses Following Art Making\u201D 2016)."), /*#__PURE__*/_react.default.createElement("li", null, "It exercises a new part of your brain : Is the creative part of your brain underfed? If you work in a highly analytical environment, then an art class is an excellent way to give your brain\u2019s right side a rest and stretch the left side."), /*#__PURE__*/_react.default.createElement("li", null, "It prepares kids for the future : Art enhances fine motor skills, hand-eye coordination, problem solving skills, lateral thinking, complex analysis and critical thinking skills. And art education increases creativity and open-mindedness. Creativity is cited by business leaders as the top leadership competency for the future. "), /*#__PURE__*/_react.default.createElement("li", null, "You\u2019ll look at the world in new ways : Art makes you look at things anew \u2013 even mundane ordinary aspects of the world. Communicating with color, shape, and form awakens your imagination."), /*#__PURE__*/_react.default.createElement("li", null, "Get UNSTUCK : Our inner voices make harsh critics that can stop us before we even begin. Art teaches risk taking, learning from one\u2019s mistakes, and being open to other possibilities. The camaraderie and support of fellow classmates and an encouraging instructor can be the push that you need to just start making!"), /*#__PURE__*/_react.default.createElement("li", null, "Challenge yourself : Learn something new! Whether it\u2019s a new technique, a new medium, or if art in general is something you\u2019ve never done before \u2013 learning new things strengthens us and gives us more confidence."), /*#__PURE__*/_react.default.createElement("li", null, "Decorate your house/apartment : You\u2019ll get so much joy from creating something yourself and having it be a unique addition to your home. And when someone compliments you on the art, you can tell people YOU made it!"), /*#__PURE__*/_react.default.createElement("li", null, "Meet new people : Taking a class together helps you learn new things about old friends and gives you something new to talk about when you go out. And you\u2019ll meet cool new people you otherwise may have never known. Art reaches across racial stereotypes, religious barriers, and socio-economical levels and prejudices. Seeing other culture\u2019s creative expression allows everyone to be more connected and less isolated."), /*#__PURE__*/_react.default.createElement("li", null, "Rekindle your passion : Jealous of what kids made in summer camp and you want to make something, too? Nowadays, you\u2019ve become too busy to keep old hobbies; however, indulging in an old passion could be the perfect remedy for refreshing your spirit.")), /*#__PURE__*/_react.default.createElement("figure", {
+      className: "rightfloating"
+    }, img2, img2caption), /*#__PURE__*/_react.default.createElement("h2", null, "Why this club?  \uD83D\uDE2F"), /*#__PURE__*/_react.default.createElement("p", null, "We encourage different art forms like drawing, sketching, painting, many more and welcome one and all. No age barriers"), /*#__PURE__*/_react.default.createElement("h2", null, "Want to have fun doodling? \uD83D\uDD8C"), /*#__PURE__*/_react.default.createElement("p", null, "Yaay!!! Come forward and join us! We are excited to have you :) "), /*#__PURE__*/_react.default.createElement("h2", null, "So what are you waiting for?"), /*#__PURE__*/_react.default.createElement("h2", null, "Lets doodle together!!! \uD83D\uDC9C"));
+
+    return /*#__PURE__*/_react.default.createElement("main", null, homepagecontent);
+  }
+
 }
 
 var _default = Home;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","./images/homepage_1.jpg":"images/homepage_1.jpg","./images/homepage_2.jpg":"images/homepage_2.jpg"}],"constant.json":[function(require,module,exports) {
-module.exports = {
-  "url": "https://clubserver.glitch.me"
-};
-},{}],"login.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","./images/homepage_1.jpg":"images/homepage_1.jpg","./images/homepage_2.jpg":"images/homepage_2.jpg","./constant.json":"constant.json"}],"login.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -29226,7 +29235,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53115" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62731" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
