@@ -1,8 +1,7 @@
 # The Doodlers Club!
 
-- This is a simple responsive react application as part of coursework.
-
-[Link to demo:](https://vidhiv.github.io/TheDoodlersClub/)
+- This is a simple responsive react application as part of coursework. 
+- [Click here](https://vidhiv.github.io/TheDoodlersClub/) to view the application.
 
 # Getting Started with Create React App
 
