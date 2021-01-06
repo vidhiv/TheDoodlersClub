@@ -28554,54 +28554,119 @@ var _react = _interopRequireDefault(require("react"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-let formContents = /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, " ", /*#__PURE__*/_react.default.createElement("label", null, "Name: "), /*#__PURE__*/_react.default.createElement("input", {
-  type: "text",
-  name: "username",
-  id: "username",
-  required: true,
-  minLength: "3",
-  maxLength: "20"
-}), /*#__PURE__*/_react.default.createElement("label", null, "Email: "), /*#__PURE__*/_react.default.createElement("input", {
-  type: "email",
-  name: "emailid",
-  id: "emailid",
-  required: true,
-  minLength: "5",
-  maxLength: "50"
-}), /*#__PURE__*/_react.default.createElement("label", null, "Password: "), /*#__PURE__*/_react.default.createElement("input", {
-  type: "password",
-  name: "password",
-  id: "password",
-  required: true,
-  minLength: "6",
-  maxLength: "10"
-}), /*#__PURE__*/_react.default.createElement("label", null, "Interested In: "), /*#__PURE__*/_react.default.createElement("select", {
-  name: "activities",
-  id: "activities"
-}, /*#__PURE__*/_react.default.createElement("option", {
-  value: "Drawing for kids"
-}, "Drawing for kids"), /*#__PURE__*/_react.default.createElement("option", {
-  value: "Sketching session"
-}, "Sketching session"), /*#__PURE__*/_react.default.createElement("option", {
-  value: "Outdoor painting"
-}, "Outdoor painting"), /*#__PURE__*/_react.default.createElement("option", {
-  value: "Knife painting"
-}, "Knife painting"), /*#__PURE__*/_react.default.createElement("option", {
-  value: "Other"
-}, "Other")), /*#__PURE__*/_react.default.createElement("button", {
-  type: "button",
-  id: "applyNow"
-}, "Apply now!!!"));
+class Application extends _react.default.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      username: "",
+      password: "",
+      email: "",
+      interest: "Drawing for kids",
+      showClass: false
+    };
+  }
 
-let pagecontent = /*#__PURE__*/_react.default.createElement("form", {
-  method: "POST",
-  className: "applicationForm"
-}, formContents);
+  username(e) {
+    this.setState({
+      username: e.currentTarget.value
+    });
+  }
 
-function Application() {
-  return /*#__PURE__*/_react.default.createElement("main", {
-    id: "applicationForm"
-  }, pagecontent);
+  password(e) {
+    this.setState({
+      password: e.currentTarget.value
+    });
+  }
+
+  email(e) {
+    this.setState({
+      email: e.currentTarget.value
+    });
+  }
+
+  interest(e) {
+    this.setState({
+      interest: e.currentTarget.value
+    });
+  }
+
+  applynow() {
+    this.setState({
+      showClass: !this.state.showClass
+    });
+  }
+
+  render() {
+    let formContents = /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, " ", /*#__PURE__*/_react.default.createElement("label", null, "Name: "), /*#__PURE__*/_react.default.createElement("input", {
+      type: "text",
+      name: "username",
+      id: "username",
+      value: this.state.username,
+      onChange: this.username.bind(this),
+      required: true,
+      minLength: "3",
+      maxLength: "20"
+    }), /*#__PURE__*/_react.default.createElement("label", null, "Email: "), /*#__PURE__*/_react.default.createElement("input", {
+      type: "email",
+      name: "emailid",
+      id: "emailid",
+      value: this.state.email,
+      onChange: this.email.bind(this),
+      required: true,
+      minLength: "5",
+      maxLength: "50"
+    }), /*#__PURE__*/_react.default.createElement("label", null, "Password: "), /*#__PURE__*/_react.default.createElement("input", {
+      type: "password",
+      name: "password",
+      id: "password",
+      value: this.state.password,
+      onChange: this.password.bind(this),
+      required: true,
+      minLength: "6",
+      maxLength: "10"
+    }), /*#__PURE__*/_react.default.createElement("label", null, "Interested In: "), /*#__PURE__*/_react.default.createElement("select", {
+      name: "activities",
+      id: "activities",
+      onChange: this.interest.bind(this)
+    }, /*#__PURE__*/_react.default.createElement("option", {
+      value: "Drawing for kids"
+    }, "Drawing for kids"), /*#__PURE__*/_react.default.createElement("option", {
+      value: "Sketching session"
+    }, "Sketching session"), /*#__PURE__*/_react.default.createElement("option", {
+      value: "Outdoor painting"
+    }, "Outdoor painting"), /*#__PURE__*/_react.default.createElement("option", {
+      value: "Knife painting"
+    }, "Knife painting"), /*#__PURE__*/_react.default.createElement("option", {
+      value: "Other"
+    }, "Other")), /*#__PURE__*/_react.default.createElement("button", {
+      type: "button",
+      id: "applyNow",
+      onClick: this.applynow.bind(this)
+    }, "Apply now!!!"));
+
+    let pagecontent = /*#__PURE__*/_react.default.createElement("form", {
+      method: "POST",
+      className: "applicationForm"
+    }, formContents);
+
+    let sectionContents = /*#__PURE__*/_react.default.createElement("section", {
+      id: "ThanksDialog",
+      className: this.state.showClass ? "showSection" : "hiddenSection"
+    }, /*#__PURE__*/_react.default.createElement("div", {
+      id: "Dialogdiv"
+    }, /*#__PURE__*/_react.default.createElement("h3", null, "Thank you for applying!!!"), /*#__PURE__*/_react.default.createElement("p", {
+      id: "ThanksP"
+    }, /*#__PURE__*/_react.default.createElement("label", null, "Name : ", this.state.username), /*#__PURE__*/_react.default.createElement("label", null, "Email : ", this.state.email), /*#__PURE__*/_react.default.createElement("label", null, "Interested in : ", this.state.interest)), /*#__PURE__*/_react.default.createElement("button", {
+      type: "button",
+      id: "closeBox",
+      onClick: this.applynow.bind(this)
+    }, "Close")));
+
+    return /*#__PURE__*/_react.default.createElement("main", {
+      id: "applicationForm"
+    }, pagecontent, sectionContents);
+  }
+
 }
 
 var _default = Application;

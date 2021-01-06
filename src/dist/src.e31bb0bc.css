@@ -214,18 +214,23 @@ main#applicationForm input:invalid {
 }
 
 #Dialogdiv {
-    background-color: #f9ffc7;
+    background-color: #f4f7df;
     color: #2c9284;
     margin-top:15%;
     margin-left: 30%;
-    width: 30%;
+    width: 40%;
     border: 2px solid #7cc3ca;
     border-radius: 1em;
     text-align: center;
-    padding: 20px;
+    padding: 1em;
 }
 
-/* Admiin Activities Page */
+#ThanksP {
+    display: grid;
+    grid-template-columns: 20em;
+    grid-row-gap: 1em;
+}
+/* Admin Activities Page */
 
 #addNewEvent input:valid {
     background-color: #d4eabf;
