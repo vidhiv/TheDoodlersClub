@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/TheDoodlersClub/static/css/main.e9411498.chunk.css",
-    "main.js": "/TheDoodlersClub/static/js/main.85b483dc.chunk.js",
-    "main.js.map": "/TheDoodlersClub/static/js/main.85b483dc.chunk.js.map",
+    "main.css": "/TheDoodlersClub/static/css/main.8c44c7b9.chunk.css",
+    "main.js": "/TheDoodlersClub/static/js/main.ad291ab2.chunk.js",
+    "main.js.map": "/TheDoodlersClub/static/js/main.ad291ab2.chunk.js.map",
     "runtime-main.js": "/TheDoodlersClub/static/js/runtime-main.65be516f.js",
     "runtime-main.js.map": "/TheDoodlersClub/static/js/runtime-main.65be516f.js.map",
     "static/js/2.2fc523af.chunk.js": "/TheDoodlersClub/static/js/2.2fc523af.chunk.js",
     "static/js/2.2fc523af.chunk.js.map": "/TheDoodlersClub/static/js/2.2fc523af.chunk.js.map",
     "index.html": "/TheDoodlersClub/index.html",
-    "static/css/main.e9411498.chunk.css.map": "/TheDoodlersClub/static/css/main.e9411498.chunk.css.map",
+    "static/css/main.8c44c7b9.chunk.css.map": "/TheDoodlersClub/static/css/main.8c44c7b9.chunk.css.map",
     "static/js/2.2fc523af.chunk.js.LICENSE.txt": "/TheDoodlersClub/static/js/2.2fc523af.chunk.js.LICENSE.txt",
     "static/media/club.css": "/TheDoodlersClub/static/media/Pangolin-Regular.7960c77c.ttf",
     "static/media/activitiesPage.62bfcffc.jpg": "/TheDoodlersClub/static/media/activitiesPage.62bfcffc.jpg",
@@ -17,7 +17,7 @@
   "entrypoints": [
     "static/js/runtime-main.65be516f.js",
     "static/js/2.2fc523af.chunk.js",
-    "static/css/main.e9411498.chunk.css",
-    "static/js/main.85b483dc.chunk.js"
+    "static/css/main.8c44c7b9.chunk.css",
+    "static/js/main.ad291ab2.chunk.js"
   ]
 }
